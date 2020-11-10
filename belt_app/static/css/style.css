@@ -1,0 +1,139 @@
+.container {
+    width: 950px;
+    margin: 0 auto;
+    padding: 15px;
+    border: 1px solid black;
+    background: rgb(99,99,99);
+    background: linear-gradient(180deg, rgba(99,99,99,1) 0%, rgba(70,70,70,1) 100%);
+    border-radius: 10px;
+}
+.header a {
+    margin-left: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    vertical-align: top;
+    color: goldenrod;
+}
+.header h1 {
+    display: inline-block;
+    margin-left: 25px;
+    color: rgba(255, 255, 255, 0.678);
+}
+#home {
+    margin-left: 220px;
+}
+.registration {
+    width: 450px;
+    padding: 10px;
+    display: inline-block;
+    display: inline-block;
+}
+.login {
+    padding: 10px;
+    width: 450px;
+    display: inline-block;
+    vertical-align: top;
+}
+.fill_out {
+    display: block;
+    margin-left: 125px;
+    margin-bottom: 10px;
+}
+.registration p , .login p {
+    margin: 0px 0px 3px 125px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.registration h1, .login h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.678);
+}
+.submit-btn, .submit-btn1, .submit-btn2 {
+    background-color: rgb(145, 145, 150);
+    font-size: 17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 75px;
+    display: block;
+    margin-left: 39%;
+    -webkit-box-shadow: 7px 5px 12px 1px rgba(0,0,0,0.7);
+    box-shadow: 7px 5px 12px 1px rgba(0,0,0,0.7);
+    border-radius: 5px;
+}
+.quotes {
+    margin-left: 40px;
+    display: inline-block;
+}
+.quotes h2, .add_quote h2, .edit_account h2 {
+    font-size: 22px;
+    color: goldenrod;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.quote {
+    margin-bottom: 60px;
+    width: 250px;
+}
+.author {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: darkred;
+    font-size: 20px;
+}
+.author_content {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+.like {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: bolder;
+    color: rgb(36, 36, 211);
+}
+.quotes a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(255, 255, 255, 0.705);
+}
+.like_btn, .submitt {
+    background-color: rgb(145, 145, 150);
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 75px;
+    display: block;
+    margin-left: 38%;
+    margin-top: 10px;
+    box-shadow: 7px 5px 12px 1px rgba(0,0,0,0.7);
+    border-radius: 5px;
+}
+.add_quote {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 35%;
+}
+.fill_in {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+.fill_in1 {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 30%;
+}
+.add_quote p, .edit_account p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: darkred;
+    font-size: 19px;
+}
+.edit_account {
+    margin: auto;
+    display: inline-block;
+}
+#delete {
+    color: rgb(255, 255, 255);
+}
+.messages {
+    color: rgb(185, 0, 0);
+    text-align: center;
+    list-style-type: none;
+}

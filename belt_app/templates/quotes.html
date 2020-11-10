@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users and Quotes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% load static %}
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome, {{user.first_name}} {{user.last_name}}</h1>
+            <a href="/quotes" id ="home">Home</a>
+            <a href="/edit_account">Edit My Account</a>
+            <a href="/log_out">Log Out</a>
+        </div>
+        <div class="quotes">
+            <h2>Quotes</h2>
+            {% for quote in all_quotes %}
+                <div class="quote">
+                    <p class="author">{{quote.author}}:</p> <p class='author_content'>"{{quote.content}}"</p>
+                    <br>
+                    <p>Posted by: <a href="/users/{{quote.uploaded_by.id}}">{{quote.uploaded_by.first_name}} {{quote.uploaded_by.last_name}}</a></p>
+                    <p class="like">{{quote.users_who_like.count}} people like this!</p>
+                    {% if user not in quote.users_who_like.all %}
+                        <form action="/quotes/like/{{quote.id}}" method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="Like!" class='like_btn'>
+                        </form>
+                    {% endif %}
+                    {% if user == quote.uploaded_by %}
+                        <a href="/quotes/delete/{{quote.id}}" id='delete'>Delete</a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="add_quote">
+            <h2>Add a Quote!</h2>
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class ="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            <form action="/quotes/add" method="post">
+            {% csrf_token %}
+           <p>Author</p> <input type="text" name="author" class="fill_in">
+           <p>Quote</p> <textarea name="content" cols="25" rows="5" class="fill_in"></textarea>
+            <input type="submit" value="Submit" class="submitt">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

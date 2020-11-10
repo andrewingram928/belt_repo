@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users and Quotes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% load static %}
+</head>
+<body>
+    <div class="container">
+        <div class="registration">
+            <h1>Register</h1>
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class ="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            <form action="/register" method="post">
+                {% csrf_token %}
+                <p>First Name:</p> <input type="text" name="first_name" class='fill_in1'>
+                <p>Last Name:</p>  <input type="text" name="last_name" class='fill_in1'>
+                <p>Email:</p>  <input type="email" name="email" class='fill_in1'>
+                <p>Password:</p>  <input type="password" name="password" class='fill_in1'>
+                <p>Confirm Password:</p>  <input type="password" name="conf_pw" class='fill_in1'>
+                <input type="submit" value="Register" class="submit-btn">
+            </form>
+        </div>
+        <div class="login">
+            <h1>Login</h1>
+            <form action="/login" method="post">
+                {% csrf_token %}
+               <p>Email:</p> <input type="text" name="email" class='fill_in1'>
+               <p>Password:</p> <input type="password" name="password" class='fill_in1'>
+                <input type="submit" value="Login" class="submit-btn">
+            </form>
+        </div>
+    </div>
+</body>
+</body>
+</html>

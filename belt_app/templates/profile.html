@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users and Quotes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% load static %}
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome, {{user.first_name}} {{user.last_name}}</h1>
+            <a href="/quotes" id ="home">Home</a>
+            <a href="/edit_account">Edit My Account</a>
+            <a href="/log_out">Log Out</a>
+        </div>
+        <div class="quotes">
+            <h2>{{that_user.first_name}} {{that_user.last_name}}'s Quotes</h2>
+            {% for quote in that_user.uploaded_quotes.all %}
+            <div class="quote">
+                <p class="author">{{quote.author}}:</p> <p class='author_content'>"{{quote.content}}"</p>
+                <br>
+                <p class="like">{{quote.users_who_like.count}} people like this!</p>
+                {% if user not in quote.users_who_like.all %}
+                    <form action="/quotes/like/{{quote.id}}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Like!">
+                    </form>
+                {% endif %}
+                {% if user == quote.uploaded_by %}
+                    <a href="/quotes/delete/{{quote.id}}">Delete</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
